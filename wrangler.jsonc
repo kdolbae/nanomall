@@ -1,0 +1,21 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "nanomall-web",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-09-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": { "directory": ".open-next/assets", "binding": "ASSETS" },
+  "observability": { "enabled": true },
+  // 공개 주소. 배포할 때 Cloudflare 가 DNS 레코드·인증서를 만든다(Custom Domain).
+  // nanomall.kr 영역(zone)이 이 Cloudflare 계정에 있어야 배포된다. 영역을 아직 옮기지 않았으면 아래 두 줄을 잠시 주석 처리하고 workers.dev 로 먼저 띄운다.
+  "routes": [
+    { "pattern": "nanomall.kr", "custom_domain": true },
+    { "pattern": "www.nanomall.kr", "custom_domain": true }
+  ],
+  "workers_dev": true,
+  // Supabase 가 서울(ap-northeast-2)에 있어 Worker 도 그 가까이에서 돌게 한다(SBWorks 와 같은 이유).
+  "placement": { "region": "aws:ap-northeast-2" },
+  // 공개 값(NEXT_PUBLIC_*)은 빌드 때 박히므로 .env.production 에 둔다.
+  // 비밀(SUPABASE_SECRET_KEY, ADMIN_KEY)은 대시보드 > Workers & Pages > nanomall-web > Settings > Variables and Secrets 에 Secret 으로.
+  "vars": {}
+}

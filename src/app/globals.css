@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+/* 나노몰 디자인 토큰 — 디자인 프롬프트(/mnt/project-files/nanomall/디자인_프롬프트.md)와 같은 값.
+ * 라이트 모드만. 강조색은 딥 블루 하나, 카카오 버튼만 카카오 노랑. */
+:root {
+  --bg: #ffffff;
+  --bg-2: #f4f6f8;
+  --text: #14181d;
+  --muted: #5a6672;
+  --border: #d5dde4;
+  --border-strong: #bcc6d0;
+  --accent: #1c5fd0;
+  --accent-ink: #ffffff;
+  --accent-bg: #e8f0fd;
+  --success: #17754a;
+  --success-bg: #e6f3ec;
+  --warn: #8a5600;
+  --warn-bg: #fbf1dc;
+  --kakao: #fee500;
+  --kakao-ink: #191919;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-2: var(--bg-2);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-bg: var(--accent-bg);
+  --color-success: var(--success);
+  --color-success-bg: var(--success-bg);
+  --color-warn: var(--warn);
+  --color-warn-bg: var(--warn-bg);
+  --color-kakao: var(--kakao);
+  --color-kakao-ink: var(--kakao-ink);
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  --shadow-card: var(--shadow);
+}
+
+html {
+  font-family: var(--font-sans);
+  font-feature-settings: "tnum";
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+}
+
+/* 공통 부품 */
+.container-x {
+  @apply mx-auto w-full max-w-6xl px-4 sm:px-6;
+}
+.btn {
+  @apply inline-flex h-11 items-center justify-center gap-2 rounded-lg px-5 text-[15px] font-semibold transition-colors sm:h-11;
+}
+.btn-primary {
+  @apply inline-flex h-11 items-center justify-center gap-2 rounded-lg px-5 text-[15px] font-semibold transition-colors sm:h-11 bg-accent text-accent-ink hover:bg-[#174fb0];
+}
+.btn-outline {
+  @apply inline-flex h-11 items-center justify-center gap-2 rounded-lg px-5 text-[15px] font-semibold transition-colors sm:h-11 border border-border-strong bg-bg text-text hover:bg-bg-2;
+}
+.btn-kakao {
+  @apply inline-flex h-11 items-center justify-center gap-2 rounded-lg px-5 text-[15px] font-semibold transition-colors sm:h-11 bg-kakao text-kakao-ink hover:bg-[#f5dc00];
+}
+.card {
+  @apply rounded-lg border border-border bg-bg;
+}
+.tag {
+  @apply inline-flex items-center rounded-md bg-bg-2 px-2 py-0.5 text-xs font-medium text-muted;
+}
+.badge-fill {
+  @apply inline-flex items-center rounded-md bg-accent px-2 py-0.5 text-xs font-semibold text-accent-ink;
+}
+.badge-soft {
+  @apply inline-flex items-center rounded-md bg-accent-bg px-2 py-0.5 text-xs font-semibold text-accent;
+}
+.badge-line {
+  @apply inline-flex items-center rounded-md border border-border-strong px-2 py-0.5 text-xs font-semibold text-muted;
+}
+.h-section {
+  @apply text-2xl font-bold tracking-tight sm:text-[32px] sm:leading-tight;
+}
+.field {
+  @apply h-11 w-full rounded-lg border border-border-strong bg-bg px-3 text-[15px] outline-none focus:border-accent focus:ring-2 focus:ring-accent-bg;
+}
+.prose-k p {
+  @apply mb-3;
+}
