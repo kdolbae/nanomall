@@ -53,8 +53,8 @@ npm run dev
 
 ## 카카오톡 채널
 
-`NEXT_PUBLIC_KAKAO_CHAT_URL`이 모든 "카카오톡 상담" 버튼의 목적지입니다. 나노몰 전용 채널이 생기면
-`.env.production`의 값을 `http://pf.kakao.com/_xxxx/chat` 형태로 바꿔 커밋합니다.
+`NEXT_PUBLIC_KAKAO_CHAT_URL`(나노몰 채널 `http://pf.kakao.com/_udtxexj/chat`)이 모든 "카카오톡 상담" 버튼의 목적지입니다.
+채널을 바꾸면 `.env.production`의 값을 고쳐 커밋합니다.
 버튼 클릭은 `/api/track` → `nm_event`에 기록되어 `/admin/stats`에서 봅니다(개인정보 없음).
 
 ## DB 변경

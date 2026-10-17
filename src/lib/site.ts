@@ -26,7 +26,7 @@ export const COMPANY = {
 };
 
 /** 카카오톡 채널 채팅 주소. 모든 문의 버튼이 여기로 간다. 나노몰 채널이 생기면 .env.production 만 바꾼다. */
-export const KAKAO_CHAT_URL = process.env.NEXT_PUBLIC_KAKAO_CHAT_URL || "http://pf.kakao.com/_MGxbyb/chat";
+export const KAKAO_CHAT_URL = process.env.NEXT_PUBLIC_KAKAO_CHAT_URL || "http://pf.kakao.com/_udtxexj/chat";
 
 export const NAV = [
   { href: "/education", label: "교육센터" },
