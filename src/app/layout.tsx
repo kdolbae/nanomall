@@ -37,6 +37,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css"
         />
+        {/* 접속·전화·카톡·폼 기록 → sbworks 광고도구 접속자 분석(partner_events brand=nanomall). nm_event 기록은 그대로 둔다. */}
+        <script defer src="https://sbworks.bond/api/public/t?b=nanomall" />
       </head>
       <body className="min-h-dvh flex flex-col pb-16 md:pb-0">
         <Header />
